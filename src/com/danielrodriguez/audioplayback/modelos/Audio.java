@@ -1,21 +1,25 @@
 package com.danielrodriguez.audioplayback.modelos;
 
+import java.util.Scanner;
+
 public class Audio {
 
     //Atributos de contenido de audio
 
     private String titulo;
-    private int duracion;
+    private int duracionEnMinutos;
     private int totalDeReproducciones;
     private int meGusta;
     private String idioma;
+    int userChoice;
+    Scanner inputUser = new Scanner(System.in);
 
 
     //Constructor
 
     public Audio(String titulo, int duracion, String idioma){
         this.titulo = titulo;
-        this.duracion = duracion;
+        this.duracionEnMinutos = duracion;
         this.idioma = idioma;
     }
 
@@ -25,8 +29,8 @@ public class Audio {
     public String getTitulo() { return titulo; }
     public void setTitulo(String titulo) { this.titulo = titulo; }
 
-    public int getDuracion() { return duracion; }
-    public void setDuracion(int duracion) { this.duracion = duracion; }
+    public int getDuracionEnMinutos() { return duracionEnMinutos; }
+    public void setDuracionEnMinutos(int duracionEnMinutos) { this.duracionEnMinutos = duracionEnMinutos; }
 
     public int getTotalDeReproducciones() { return totalDeReproducciones; }
     public void setTotalDeReproducciones(int totalDeReproducciones) { this.totalDeReproducciones = totalDeReproducciones; }
@@ -50,13 +54,23 @@ public class Audio {
             System.out.println("Género: " + ((Cancion) audio).getGenero());
             System.out.println("Album: " + ((Cancion) audio).getAlbum());
         }
-        System.out.println("Duracion: " + duracion);
+        System.out.println("Duracion: " + duracionEnMinutos);
         System.out.println("Total de reproducciones: " + totalDeReproducciones);
         System.out.println("Me gustas: " + meGusta);
     }
 
-//    public void reproducir(){
-//
-//    }
-
+    public void reproducir(){
+        System.out.println("▶️ Reproduciendo " + titulo + "...");
+        duracionEnMinutos = duracionEnMinutos * 60;
+            for (int i = 1; i <= duracionEnMinutos; i++) {
+                System.out.print("\r⏱️ Segundo " + i + "...");
+                try {
+                    Thread.sleep(1000); // Pausa de 1 segundo
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+            System.out.println("⏹️ Reproducción finalizada.");
+    }
 }
+
