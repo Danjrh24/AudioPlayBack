@@ -1,6 +1,7 @@
 package com.danielrodriguez.audioplayback.modelos;
+import com.danielrodriguez.audioplayback.calculos.Clasificacion;
 
-public class Cancion extends Audio{
+public class Cancion extends Audio implements Clasificacion {
 
     //Atributos de cancion
 
@@ -24,4 +25,17 @@ public class Cancion extends Audio{
 
     public String getAlbum() { return album; }
     public void setAlbum(String album) { this.album = album; }
+
+    //Metodos
+
+    @Override
+    public int getClasificacion() {
+        if (getTotalDeMeGusta() >= 10) {
+            return 5;
+        }else if (getTotalDeMeGusta() >= 7) {
+            return 4;
+        }else {
+            return 3;
+        }
+    }
 }

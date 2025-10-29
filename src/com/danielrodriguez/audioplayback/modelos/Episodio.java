@@ -1,4 +1,5 @@
 package com.danielrodriguez.audioplayback.modelos;
+import com.danielrodriguez.audioplayback.calculos.Clasificacion;
 
 public class Episodio {
 
@@ -7,6 +8,8 @@ public class Episodio {
     private String nombre;
     private int numeroDeEpisodio;
     private int duracionEnMinutosDelEpisodio;
+    private int totalDeEstrellas;
+    private int totalDeEvaluaciones;
     private Podcast podcast;
 
     //Constructor
@@ -20,7 +23,6 @@ public class Episodio {
 
     //Getters and setters
 
-
     public String getNombre() { return nombre; }
     public void setNombre(String nombre) { this.nombre = nombre; }
 
@@ -32,4 +34,16 @@ public class Episodio {
 
     public Podcast getPodcast() { return podcast; }
     public void setPodcast(Podcast podcast) { this.podcast = podcast; }
+
+    //Metodos
+
+    public void evalua(int numeroDeEstrellas){
+        totalDeEstrellas += numeroDeEstrellas;
+        totalDeEvaluaciones++;
+    }
+
+    public int calculaMediaDeEstrellas(){
+        return totalDeEstrellas / totalDeEvaluaciones;
+    }
+
 }

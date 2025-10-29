@@ -1,6 +1,7 @@
 package com.danielrodriguez.audioplayback.modelos;
+import com.danielrodriguez.audioplayback.calculos.Clasificacion;
 
-public class Podcast extends Audio{
+public class Podcast extends Audio implements Clasificacion {
 
     //Atributos de podcast
 
@@ -28,4 +29,17 @@ public class Podcast extends Audio{
 
     public int getCantidadDeEpisodios() { return cantidadDeEpisodios; }
     public void setCantidadDeEpisodios(int cantidadDeEpisodios) { this.cantidadDeEpisodios = cantidadDeEpisodios; }
+
+    //Metodos
+
+    @Override
+    public int getClasificacion() {
+        if(getTotalDeReproducciones() >= 10) {
+            return 5;
+        } else if(getTotalDeReproducciones() >= 7) {
+            return 4;
+        } else {
+            return 3;
+        }
+    }
 }
