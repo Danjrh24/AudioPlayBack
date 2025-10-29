@@ -1,0 +1,35 @@
+package com.danielrodriguez.audioplayback.modelos;
+
+public class Episodio {
+
+    //Atributos de episodio
+
+    private String nombre;
+    private int numeroDeEpisodio;
+    private int duracionEnMinutosDelEpisodio;
+    private Podcast podcast;
+
+    //Constructor
+
+    public Episodio(String nombre, int numeroDeEpisodio, int duracionEnMinutosDelEpisodio, Podcast podcast){
+        this.nombre = nombre;
+        this.numeroDeEpisodio = numeroDeEpisodio;
+        this.duracionEnMinutosDelEpisodio = duracionEnMinutosDelEpisodio;
+        this.podcast = podcast;
+    }
+
+    //Getters and setters
+
+
+    public String getNombre() { return nombre; }
+    public void setNombre(String nombre) { this.nombre = nombre; }
+
+    public int getNumeroDeEpisodio() { return numeroDeEpisodio; }
+    public void setNumeroDeEpisodio(int numeroDeEpisodio) { this.numeroDeEpisodio = numeroDeEpisodio; }
+
+    public int getDuracionEnMinutosDelEpisodio() { return duracionEnMinutosDelEpisodio; }
+    public void setDuracionEnMinutosDelEpisodio(int duracionEnMinutosDelEpisodio) { this.duracionEnMinutosDelEpisodio = duracionEnMinutosDelEpisodio; }
+
+    public Podcast getPodcast() { return podcast; }
+    public void setPodcast(Podcast podcast) { this.podcast = podcast; }
+}

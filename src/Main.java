@@ -8,6 +8,5 @@ public class Main {
         miCancion.setAlbum("El último tour del mundo");
         miCancion.setGenero("trap");
         miCancion.muestraFichaTecnica(miCancion);
-        miCancion.reproducir();
     }
 }
