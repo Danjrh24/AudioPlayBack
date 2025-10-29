@@ -9,6 +9,7 @@ public class Podcast extends Audio implements Clasificacion {
     private String descripcion;
     private String tematica;
     private int cantidadDeEpisodios;
+    private int duracionDeEpisodiosEnMinutos;
 
     //Constructor
 
@@ -30,16 +31,24 @@ public class Podcast extends Audio implements Clasificacion {
     public int getCantidadDeEpisodios() { return cantidadDeEpisodios; }
     public void setCantidadDeEpisodios(int cantidadDeEpisodios) { this.cantidadDeEpisodios = cantidadDeEpisodios; }
 
+    public int getDuracionDeEpisodiosEnMinutos() { return duracionDeEpisodiosEnMinutos; }
+    public void setDuracionDeEpisodiosEnMinutos(int duracionDeEpisodiosEnMinutos) { this.duracionDeEpisodiosEnMinutos = duracionDeEpisodiosEnMinutos; }
+
     //Metodos
 
     @Override
     public int getClasificacion() {
         if(getTotalDeReproducciones() >= 10) {
             return 5;
-        } else if(getTotalDeReproducciones() >= 7) {
+        } else if (getTotalDeReproducciones() >= 7) {
             return 4;
         } else {
             return 3;
         }
+    }
+
+    @Override
+    public int getDuracionEnMinutos() {
+        return duracionDeEpisodiosEnMinutos * cantidadDeEpisodios;
     }
 }

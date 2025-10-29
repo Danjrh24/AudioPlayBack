@@ -1,4 +1,5 @@
 package com.danielrodriguez.audioplayback.modelos;
+import com.danielrodriguez.audioplayback.calculos.DuracionTotalEnMinutos;
 
 import java.util.Scanner;
 
@@ -13,7 +14,6 @@ public class Audio {
     private String idioma;
     int userChoice;
     Scanner inputUser = new Scanner(System.in);
-
 
     //Constructor
 
@@ -53,8 +53,13 @@ public class Audio {
             System.out.println("Artista: " + ((Cancion) audio).getArtista());
             System.out.println("Género: " + ((Cancion) audio).getGenero());
             System.out.println("Album: " + ((Cancion) audio).getAlbum());
+        } else if (audio.getClass().equals(Podcast.class)){
+            System.out.println("Presentador: " + ((Podcast) audio).getPresentador());
+            System.out.println("Descripcion: " + ((Podcast) audio).getDescripcion());
+            System.out.println("Tematica: " + ((Podcast) audio).getTematica());
+            System.out.println("Cantidad de episodios: " + ((Podcast) audio).getCantidadDeEpisodios());
         }
-        System.out.println("Duracion: " + duracionEnMinutos);
+        System.out.println("Duracion total en minutos: " + audio.getDuracionEnMinutos());
         System.out.println("Total de reproducciones: " + totalDeReproducciones);
         System.out.println("Me gustas: " + totalDeMeGusta);
     }

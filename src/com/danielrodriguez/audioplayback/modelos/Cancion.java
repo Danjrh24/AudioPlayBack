@@ -32,9 +32,9 @@ public class Cancion extends Audio implements Clasificacion {
     public int getClasificacion() {
         if (getTotalDeMeGusta() >= 10) {
             return 5;
-        }else if (getTotalDeMeGusta() >= 7) {
+        } else if (getTotalDeMeGusta() >= 7) {
             return 4;
-        }else {
+        } else {
             return 3;
         }
     }

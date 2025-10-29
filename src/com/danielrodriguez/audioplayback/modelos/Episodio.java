@@ -7,7 +7,6 @@ public class Episodio {
 
     private String nombre;
     private int numeroDeEpisodio;
-    private int duracionEnMinutosDelEpisodio;
     private int totalDeEstrellas;
     private int totalDeEvaluaciones;
     private Podcast podcast;
@@ -17,7 +16,6 @@ public class Episodio {
     public Episodio(String nombre, int numeroDeEpisodio, int duracionEnMinutosDelEpisodio, Podcast podcast){
         this.nombre = nombre;
         this.numeroDeEpisodio = numeroDeEpisodio;
-        this.duracionEnMinutosDelEpisodio = duracionEnMinutosDelEpisodio;
         this.podcast = podcast;
     }
 
@@ -28,9 +26,6 @@ public class Episodio {
 
     public int getNumeroDeEpisodio() { return numeroDeEpisodio; }
     public void setNumeroDeEpisodio(int numeroDeEpisodio) { this.numeroDeEpisodio = numeroDeEpisodio; }
-
-    public int getDuracionEnMinutosDelEpisodio() { return duracionEnMinutosDelEpisodio; }
-    public void setDuracionEnMinutosDelEpisodio(int duracionEnMinutosDelEpisodio) { this.duracionEnMinutosDelEpisodio = duracionEnMinutosDelEpisodio; }
 
     public Podcast getPodcast() { return podcast; }
     public void setPodcast(Podcast podcast) { this.podcast = podcast; }
