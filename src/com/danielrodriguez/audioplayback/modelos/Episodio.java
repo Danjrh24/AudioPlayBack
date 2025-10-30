@@ -6,6 +6,7 @@ public class Episodio {
     //Atributos de episodio
 
     private String nombre;
+    private String tematica;
     private int numeroDeEpisodio;
     private int totalDeEstrellas;
     private int totalDeEvaluaciones;
@@ -13,7 +14,7 @@ public class Episodio {
 
     //Constructor
 
-    public Episodio(String nombre, int numeroDeEpisodio, int duracionEnMinutosDelEpisodio, Podcast podcast){
+    public Episodio(String nombre, int numeroDeEpisodio, Podcast podcast){
         this.nombre = nombre;
         this.numeroDeEpisodio = numeroDeEpisodio;
         this.podcast = podcast;
@@ -29,6 +30,9 @@ public class Episodio {
 
     public Podcast getPodcast() { return podcast; }
     public void setPodcast(Podcast podcast) { this.podcast = podcast; }
+
+    public String getTematica() { return tematica; }
+    public void setTematica(String tematica) { this.tematica = tematica; }
 
     //Metodos
 

@@ -1,5 +1,7 @@
 package com.danielrodriguez.audioplayback.modelos;
+import com.danielrodriguez.audioplayback.calculos.Clasificacion;
 import com.danielrodriguez.audioplayback.calculos.DuracionTotalEnMinutos;
+import com.danielrodriguez.audioplayback.calculos.FiltroDeRecomendacion;
 
 import java.util.Scanner;
 
@@ -15,11 +17,14 @@ public class Audio {
     int userChoice;
     Scanner inputUser = new Scanner(System.in);
 
+    //Objetos
+
+    FiltroDeRecomendacion filtroDeRecomendacion = new FiltroDeRecomendacion();
+
     //Constructor
 
-    public Audio(String titulo, int duracion, String idioma){
+    public Audio(String titulo, String idioma){
         this.titulo = titulo;
-        this.duracionEnMinutos = duracion;
         this.idioma = idioma;
     }
 
@@ -56,10 +61,10 @@ public class Audio {
         } else if (audio.getClass().equals(Podcast.class)){
             System.out.println("Presentador: " + ((Podcast) audio).getPresentador());
             System.out.println("Descripcion: " + ((Podcast) audio).getDescripcion());
-            System.out.println("Tematica: " + ((Podcast) audio).getTematica());
             System.out.println("Cantidad de episodios: " + ((Podcast) audio).getCantidadDeEpisodios());
         }
         System.out.println("Duracion total en minutos: " + audio.getDuracionEnMinutos());
+        System.out.println("Valoracion: " + filtroDeRecomendacion.filtra((Clasificacion) audio));
         System.out.println("Total de reproducciones: " + totalDeReproducciones);
         System.out.println("Me gustas: " + totalDeMeGusta);
     }

@@ -11,8 +11,8 @@ public class Cancion extends Audio implements Clasificacion {
 
     //Constructor
 
-    public Cancion(String titulo, int duracion, String idioma){
-        super(titulo, duracion, idioma);
+    public Cancion(String titulo, String idioma){
+        super(titulo, idioma);
     }
 
     //Getters and setters
@@ -34,8 +34,10 @@ public class Cancion extends Audio implements Clasificacion {
             return 5;
         } else if (getTotalDeMeGusta() >= 7) {
             return 4;
-        } else {
+        } else if (getTotalDeMeGusta() >= 5) {
             return 3;
+        } else {
+            return 2;
         }
     }
 }
